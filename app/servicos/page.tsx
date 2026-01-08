@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Container } from '@/components/Container';
 import { Button } from '@/components/Button';
 import { ServiceCard } from '@/components/ServiceCard';
-import { Globe, MessageSquare, Layout, Smartphone, Search, Database } from 'lucide-react';
+import { Globe, MessageSquare, Layout, Smartphone, Search, Database, Zap, Bot } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ServicesPage() {
@@ -27,34 +27,46 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <ServiceCard
+            title="Sites Estáticos Express"
+            description="Site profissional ultra-rápido com chatbot integrado. Entrega em tempo recorde."
+            href="/sites-express"
+            icon={Zap}
+          />
+          <ServiceCard
+            title="Agentes de WhatsApp IA"
+            description="Agentes inteligentes com linguagem natural para vendas e suporte avançado."
+            href="/agentes-ia"
+            icon={Bot}
+          />
           <ServiceCard
             title="Desenvolvimento Personalizado"
-            description="Criamos sistemas que se adaptam ao seu negócio, não o contrário. Soluções escaláveis e seguras."
+            description="Criamos sistemas que se adaptam ao seu negócio. Soluções escaláveis e seguras."
             href="/sistemas-web"
             icon={Layout}
           />
           <ServiceCard
-            title="Chatbots Avançados"
-            description="Integração oficial com API do WhatsApp para automação de vendas e suporte inteligente."
+            title="Chatbots Oficiais"
+            description="Integração oficial com API do WhatsApp para automação de fluxos padrão."
             href="/chatbots-whatsapp"
             icon={MessageSquare}
           />
           <ServiceCard
             title="Sites de Alta Performance"
-            description="Landing pages e sites institucionais otimizados para conversão e velocidade extrema."
+            description="Landing pages e sites institucionais otimizados para máxima conversão."
             href="/"
             icon={Globe}
           />
           <ServiceCard
             title="Sistemas de Gestão (ERP)"
-            description="Dashboards e painéis administrativos para controle total da sua operação em tempo real."
+            description="Dashboards e painéis administrativos para controle total da sua operação."
             href="/sistemas-web"
             icon={Database}
           />
           <ServiceCard
             title="SEO e Visibilidade"
-            description="Otimização técnica para garantir que sua empresa seja encontrada pelos clientes certos."
+            description="Otimização técnica para garantir que sua empresa seja encontrada no Google."
             href="/"
             icon={Search}
           />

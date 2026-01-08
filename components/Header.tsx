@@ -11,7 +11,8 @@ import { usePathname } from 'next/navigation';
 const navigation = [
   { name: 'Início', href: '/' },
   { name: 'Serviços', href: '/servicos' },
-  { name: 'Chatbots', href: '/chatbots-whatsapp' },
+  { name: 'Sites Express', href: '/sites-express' },
+  { name: 'Agentes IA', href: '/agentes-ia' },
   { name: 'Sistemas', href: '/sistemas-web' },
   { name: 'Sobre', href: '/sobre' },
   { name: 'Contato', href: '/contato' },

@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Container } from '@/components/Container';
-import { Target, Eye, ShieldCheck } from 'lucide-react';
+import { Target, Eye, ShieldCheck, Code2, Server, Cpu } from 'lucide-react';
 
 export default function SobrePage() {
   return (
@@ -32,6 +32,28 @@ export default function SobrePage() {
             <p>
               Especializados na stack moderna de <strong>Next.js</strong> e <strong>Django</strong>, unimos a velocidade e interatividade do front-end com a robustez e segurança de back-ends empresariais. Nossa abordagem é sempre técnica, pragmática e focada em resultados.
             </p>
+          </div>
+
+          {/* New Tech Stack Section */}
+          <div className="mt-20 pt-20 border-t border-border">
+            <h2 className="text-3xl font-bold mb-12 text-center">Nossa Autoridade Técnica</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="p-6 rounded-2xl bg-muted/50 border hover:border-primary/50 transition-colors">
+                <Code2 className="h-10 w-10 text-primary mb-4" />
+                <h4 className="text-xl font-bold mb-3">Front-end Moderno</h4>
+                <p className="text-sm text-muted-foreground">Utilizamos <strong>Next.js 15+</strong> e <strong>React 19</strong> para criar interfaces ultra-rápidas, com Server Components e otimização automática de performance.</p>
+              </div>
+              <div className="p-6 rounded-2xl bg-muted/50 border hover:border-primary/50 transition-colors">
+                <Server className="h-10 w-10 text-primary mb-4" />
+                <h4 className="text-xl font-bold mb-3">Backend Robusto</h4>
+                <p className="text-sm text-muted-foreground">Sistemas complexos rodam em <strong>Django</strong> (Python), garantindo segurança de nível bancário, ORM confiável e APIs escaláveis.</p>
+              </div>
+              <div className="p-6 rounded-2xl bg-muted/50 border hover:border-primary/50 transition-colors">
+                <Cpu className="h-10 w-10 text-primary mb-4" />
+                <h4 className="text-xl font-bold mb-3">Inteligência Artificial</h4>
+                <p className="text-sm text-muted-foreground">Integramos <strong>LLMs</strong> de última geração para criar agentes que não apenas respondem, mas tomam ações inteligentes via APIs oficiais.</p>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-20">

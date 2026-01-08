@@ -1,9 +1,12 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Container } from '@/components/Container';
 import { Button } from '@/components/Button';
 import { ServiceCard } from '@/components/ServiceCard';
+import { cn } from '@/lib/utils';
 import { 
   Globe, 
   MessageSquare, 
@@ -12,32 +15,81 @@ import {
   ShieldCheck, 
   Zap, 
   BarChart, 
+  Bot
 } from 'lucide-react';
 
+const heroImages = [
+  {
+    url: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=2000&q=80",
+    alt: "Cibersegurança e Tecnologia"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=80",
+    alt: "Hardware e Inovação"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2000&q=80",
+    alt: "Inteligência Artificial e Futuro"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=80",
+    alt: "Redes e Dados Globais"
+  }
+];
+
 export default function Home() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-        <Container>
-          <div className="flex flex-col items-center text-center space-y-8">
-            <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm font-medium bg-muted/50 backdrop-blur">
-              <span className="text-primary mr-2">Novo:</span> Automações inteligentes com IA
+      <section className="relative py-24 md:py-40 overflow-hidden bg-background">
+        {/* Image Carousel Background */}
+        <div className="absolute inset-0 z-0">
+          {heroImages.map((img, index) => (
+            <div
+              key={index}
+              className={cn(
+                "absolute inset-0 transition-opacity duration-1000 ease-in-out",
+                index === currentImage ? "opacity-40" : "opacity-0"
+              )}
+            >
+              <Image
+                src={img.url}
+                alt={img.alt}
+                fill
+                priority={index === 0}
+                className="object-cover scale-105"
+              />
             </div>
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground max-w-4xl font-sans">
-              Sites, sistemas e automações inteligentes para empresas que precisam funcionar melhor.
+          ))}
+          {/* Overlay to ensure text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background z-10" />
+        </div>
+
+        <Container className="relative z-20">
+          <div className="flex flex-col items-center text-center space-y-8">
+            <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm font-medium bg-background/50 backdrop-blur-md border-primary/20">
+              <span className="text-primary mr-2 font-bold animate-pulse">Novo:</span> Automações inteligentes com IA
+            </div>
+            <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight text-foreground max-w-5xl font-sans leading-[1.1]">
+              Sites, sistemas e <span className="text-primary bg-clip-text">automações inteligentes</span> para empresas que precisam funcionar melhor.
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-              Desenvolvemos soluções simples, robustas e sob medida usando Next.js, Django e automação inteligente.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link href="https://wa.me/5521933009048" target="_blank">
-                <Button size="lg" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg shadow-xl shadow-primary/20">
                   Falar no WhatsApp
                 </Button>
               </Link>
               <Link href="/servicos">
-                <Button variant="outline" size="lg" className="w-full sm:w-auto">
+                <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 px-8 text-lg backdrop-blur-sm">
                   Ver Serviços
                 </Button>
               </Link>
@@ -55,22 +107,28 @@ export default function Home() {
               Soluções tecnológicas focadas em resultados reais e eficiência operacional.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <ServiceCard
-              title="Sites Profissionais"
-              description="Desenvolvimento com Next.js para máxima performance, SEO e experiência do usuário impecável."
-              href="/servicos"
-              icon={Globe}
+              title="Sites Express"
+              description="Site profissional ultra-rápido com chatbot integrado. Entrega em tempo recorde para seu negócio."
+              href="/sites-express"
+              icon={Zap}
             />
             <ServiceCard
-              title="Chatbots para WhatsApp"
-              description="Automações inteligentes para atendimento e vendas que funcionam 24/7 sem interrupções."
+              title="Agentes de WhatsApp"
+              description="IA generativa para atendimento humano e conversacional 24/7 sem scripts engessados."
+              href="/agentes-ia"
+              icon={Bot}
+            />
+            <ServiceCard
+              title="Chatbots Oficiais"
+              description="Integração com API do WhatsApp para automação de vendas e suporte inteligente."
               href="/chatbots-whatsapp"
               icon={MessageSquare}
             />
             <ServiceCard
-              title="Sistemas Web sob Medida"
-              description="Backend robusto em Django com interfaces modernas para gerenciar seu negócio com segurança."
+              title="Sistemas sob Medida"
+              description="Backend robusto e interfaces modernas para gerenciar seu negócio com total controle."
               href="/sistemas-web"
               icon={Layout}
             />
@@ -138,6 +196,46 @@ export default function Home() {
                  <p className="text-sm text-muted-foreground">{item.desc}</p>
                </div>
              ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20">
+        <Container>
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold tracking-tight text-center mb-12">Perguntas Frequentes</h2>
+            <div className="space-y-6">
+              {[
+                { 
+                  q: "Quanto tempo demora para meu site ficar pronto?", 
+                  a: "No serviço 'Sites Express', entregamos em até 72 horas. Projetos de sistemas complexos podem levar de 2 a 8 semanas, dependendo da necessidade." 
+                },
+                { 
+                  q: "O agente de IA funciona 24 horas?", 
+                  a: "Sim! Nossos agentes baseados em OpenAI funcionam ininterruptamente, atendendo e qualificando seus contatos mesmo enquanto você dorme." 
+                },
+                { 
+                  q: "Vocês cuidam da hospedagem?", 
+                  a: "Sim. Nossas soluções de sites estáticos já incluem 1 ano de hospedagem gratuita com certificado SSL." 
+                },
+                { 
+                  q: "Como funciona a manutenção dos sistemas?", 
+                  a: "Oferecemos pacotes mensais de suporte e evolução para garantir que seu sistema Django ou Next.js esteja sempre atualizado e seguro." 
+                },
+                { 
+                  q: "Posso integrar o chatbot com meu sistema atual?", 
+                  a: "Com certeza. Nossas automações podem ser conectadas via API com CRMs, Planilhas Google ou qualquer software que você já utilize." 
+                }
+              ].map((faq, i) => (
+                <div key={i} className="p-6 bg-muted/20 border rounded-2xl hover:border-primary/30 transition-colors">
+                  <h3 className="text-lg font-bold mb-2 flex gap-3 text-foreground">
+                    <span className="text-primary font-mono">?</span> {faq.q}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
