@@ -1,16 +1,22 @@
 import React from 'react';
-import { MessageSquare } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 export function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/5521933009048"
+      href="https://wa.me/5521933009048?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20com%20a%20NexTechIA."
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform active:scale-95 flex items-center justify-center"
+      className={cn(
+        "fixed bottom-6 right-6 z-50",
+        "bg-[#25D366] text-white p-4 rounded-full shadow-lg",
+        "transition-all duration-300 hover:scale-110 active:scale-95",
+        "flex items-center justify-center animate-bounce-subtle"
+      )}
       aria-label="Falar no WhatsApp"
     >
-      <MessageSquare className="h-6 w-6 fill-current" />
+      <MessageCircle className="h-7 w-7 fill-current" />
       <span className="sr-only">WhatsApp</span>
     </a>
   );

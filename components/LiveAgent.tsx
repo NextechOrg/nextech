@@ -12,10 +12,13 @@ interface Message {
 }
 
 export function LiveAgent() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<Message[]>([
-    { role: 'assistant', content: 'Olá! Sou o assistente da NexTechIA. Como posso ajudar a escalar seu negócio hoje?' }
+    { 
+      role: 'assistant', 
+      content: 'Olá! 👋 Seja bem-vindo à **NexTechIA**. \n\nSou seu assistente virtual e estou aqui para te ajudar a tirar sua ideia do papel. \n\nQual o objetivo do seu projeto hoje?' 
+    }
   ]);
   const [isLoading, setIsLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
