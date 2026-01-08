@@ -34,16 +34,14 @@ export default function FundadorPage() {
                 </div>
               </div>
             </div>
-            <div className="relative aspect-square rounded-2xl overflow-hidden bg-muted border antialiased shadow-xl">
-              <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/40 italic">
-                [Espaço para Imagem Institucional - Marcus Ramalho]
-              </div>
-              {/* <Image 
-                src="/marcus-ramalho.jpg" 
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-muted border antialiased shadow-xl">
+              <Image 
+                src="/marcus.jpg" 
                 alt="Marcus Ramalho" 
                 fill 
-                className="object-cover"
-              /> */}
+                className="object-cover object-top"
+                priority
+              />
             </div>
           </div>
         </Container>

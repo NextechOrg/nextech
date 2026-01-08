@@ -38,9 +38,6 @@ export function Footer() {
         </div>
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} Nextech. Todos os direitos reservados.</p>
-          <div className="flex space-x-6">
-            <span>Next.js & Django Stack</span>
-          </div>
         </div>
       </Container>
     </footer>
