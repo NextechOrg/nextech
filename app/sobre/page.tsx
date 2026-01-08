@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Container } from '@/components/Container';
 import { Target, Eye, ShieldCheck } from 'lucide-react';
 
@@ -12,6 +13,16 @@ export default function SobrePage() {
             <p className="text-xl text-muted-foreground">
               Tecnologia de ponta com foco em resolver problemas do mundo real.
             </p>
+          </div>
+
+          <div className="relative h-[400px] w-full mb-16 rounded-2xl overflow-hidden border shadow-xl bg-muted">
+            <Image
+              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
+              alt="Colaboração e tecnologia na NexTechIA"
+              fill
+              priority
+              className="object-cover"
+            />
           </div>
 
           <div className="prose dark:prose-invert max-w-none text-muted-foreground space-y-6 text-lg">

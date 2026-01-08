@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Container } from '@/components/Container';
 import { Button } from '@/components/Button';
 import { ServiceCard } from '@/components/ServiceCard';
@@ -9,11 +10,21 @@ export default function ServicesPage() {
   return (
     <div className="py-20">
       <Container>
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold tracking-tight mb-4">Nossos Serviços</h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Soluções completas para transformar a presença digital da sua empresa e otimizar processos internos.
-          </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <div>
+            <h1 className="text-4xl font-bold tracking-tight mb-4">Nossos Serviços</h1>
+            <p className="text-xl text-muted-foreground">
+              Soluções completas para transformar a presença digital da sua empresa e otimizar processos internos.
+            </p>
+          </div>
+          <div className="relative h-[250px] lg:h-[300px] w-full rounded-2xl overflow-hidden shadow-xl border bg-muted">
+            <Image 
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+              alt="Análise e serviços tecnológicos"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

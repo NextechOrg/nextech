@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Container } from '@/components/Container';
 import { Button } from '@/components/Button';
 import { CheckCircle2, MessageSquare, Zap, Clock, Users } from 'lucide-react';
@@ -33,21 +34,22 @@ export default function ChatbotsPage() {
               </Link>
             </div>
           </div>
-          <div className="bg-muted aspect-square rounded-2xl flex flex-col p-6 border shadow-inner">
-             {/* Simulação de Chat */}
-             <div className="space-y-4">
-               <div className="bg-background border rounded-lg p-3 max-w-[80%] shadow-sm uppercase text-[10px] font-bold tracking-tighter text-muted-foreground">Cliente</div>
-               <div className="bg-background border rounded-lg p-3 max-w-[80%]">Olá, gostaria de saber mais sobre os serviços.</div>
-               <div className="bg-primary/10 border-primary/20 border rounded-lg p-3 max-w-[80%] self-end uppercase text-[10px] font-bold tracking-tighter text-primary">NexTechIA Bot</div>
-               <div className="bg-primary text-primary-foreground rounded-lg p-3 max-w-[80%] self-end shadow-md">
-                 Olá! Sou o assistente inteligente da NexTechIA. Como posso te ajudar hoje?
-                 <div className="mt-2 pt-2 border-t border-primary-foreground/20 space-y-1">
-                    <div className="text-xs bg-primary-foreground/10 p-1 rounded">1. Sites Profissionais</div>
-                    <div className="text-xs bg-primary-foreground/10 p-1 rounded">2. Sistemas Web</div>
-                    <div className="text-xs bg-primary-foreground/10 p-1 rounded">3. Chatbots</div>
+          <div className="relative aspect-square">
+            <Image 
+              src="https://images.unsplash.com/photo-1577563908411-5077b6dc7624?auto=format&fit=crop&w=1000&q=80"
+              alt="Automação de WhatsApp"
+              fill
+              className="rounded-2xl object-cover shadow-2xl border"
+            />
+            {/* Overlay da simulação de chat */}
+            <div className="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-background/80 via-transparent to-transparent">
+               <div className="space-y-3 max-w-[90%]">
+                 <div className="bg-background border rounded-lg p-2 text-[10px] text-muted-foreground">Olá, como posso ajudar?</div>
+                 <div className="bg-primary text-primary-foreground rounded-lg p-3 text-sm shadow-lg border border-primary/20">
+                   Olá! Sou o assistente da NexTechIA. Gostaria de um orçamento?
                  </div>
                </div>
-             </div>
+            </div>
           </div>
         </div>
 

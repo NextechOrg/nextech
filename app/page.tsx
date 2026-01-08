@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Container } from '@/components/Container';
 import { Button } from '@/components/Button';
 import { ServiceCard } from '@/components/ServiceCard';
@@ -103,16 +104,14 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="relative aspect-square md:aspect-video lg:aspect-square bg-muted rounded-xl border shadow-inner flex items-center justify-center p-8 overflow-hidden">
-               <div className="grid grid-cols-2 gap-4 w-full h-full opacity-20">
-                 <div className="bg-primary/20 rounded-lg animate-pulse" />
-                 <div className="bg-primary/10 rounded-lg" />
-                 <div className="bg-primary/5 rounded-lg" />
-                 <div className="bg-primary/20 rounded-lg animate-pulse" />
-               </div>
-               <div className="absolute inset-0 flex items-center justify-center text-muted-foreground font-mono text-xs uppercase tracking-widest">
-                 [ NexTechIA Visual Asset ]
-               </div>
+            <div className="relative aspect-square md:aspect-video lg:aspect-square bg-muted rounded-xl border shadow-lg overflow-hidden flex items-center justify-center">
+               <Image 
+                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+                 alt="Desenvolvimento de software profissional"
+                 fill
+                 className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
+               />
+               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
             </div>
           </div>
         </Container>
