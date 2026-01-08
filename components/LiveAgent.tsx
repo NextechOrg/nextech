@@ -65,7 +65,7 @@ export function LiveAgent() {
           <div className="p-4 bg-primary text-primary-foreground flex justify-between items-center">
             <div className="flex items-center gap-2">
               <Bot className="h-5 w-5" />
-              <span className="font-bold">Nextech Agent</span>
+              <span className="font-bold">Consultor nexIA</span>
             </div>
             <button onClick={() => setIsOpen(false)} className="hover:opacity-80">
               <X className="h-5 w-5" />
