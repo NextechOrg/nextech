@@ -14,7 +14,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-muted-foreground max-w-xs">
-              Desenvolvimento de sites, sistemas web e automações inteligentes para empresas que precisam funcionar melhor no mundo real.
+              Desenvolvemos a tecnologia que seu negócio precisa para vender mais e trabalhar menos.
             </p>
           </div>
           <div>

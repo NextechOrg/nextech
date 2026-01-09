@@ -80,7 +80,7 @@ export default function Home() {
               <span className="text-primary mr-2 font-bold animate-pulse">Novo:</span> Automações inteligentes com IA
             </div>
             <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight text-foreground max-w-5xl font-sans leading-[1.1]">
-              Sites, sistemas e <span className="text-primary bg-clip-text">automações inteligentes</span> para empresas que precisam funcionar melhor.
+              Desenvolvemos a <span className="text-primary bg-clip-text">tecnologia que seu negócio precisa</span> para vender mais e trabalhar menos.
             </h1>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link href="https://wa.me/5521933009048" target="_blank">
