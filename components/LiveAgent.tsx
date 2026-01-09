@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageSquare, X, Send, Bot, User, Loader2 } from 'lucide-react';
+import { MessageSquare, X, Send, Bot, User, Loader2, HelpCircle } from 'lucide-react';
 import { Button } from './Button';
 import { cn } from '@/lib/utils';
 import ReactMarkdown from 'react-markdown';
@@ -13,6 +13,7 @@ interface Message {
 
 export function LiveAgent() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showBubble, setShowBubble] = useState(true);
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<Message[]>([
     { 
@@ -58,9 +59,30 @@ export function LiveAgent() {
 
   return (
     <div className="fixed bottom-6 right-4 sm:right-24 z-50 flex flex-col items-end max-w-[calc(100vw-2rem)]">
+      {/* Balão de Boas-vindas */}
+      {!isOpen && showBubble && (
+        <div className="mb-4 bg-background border-2 border-primary rounded-2xl p-4 shadow-xl max-w-[280px] animate-in slide-in-from-bottom-5">
+          <div className="flex items-start justify-between gap-3">
+            <div className="flex items-start gap-3 flex-1">
+              <HelpCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+              <div>
+                <p className="font-semibold text-foreground text-sm">Precisa de ajuda?</p>
+                <p className="text-xs text-muted-foreground mt-1">Clique no chat para conversar com nosso consultor</p>
+              </div>
+            </div>
+            <button 
+              onClick={() => setShowBubble(false)}
+              className="text-muted-foreground hover:text-foreground transition-colors shrink-0"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Chat Window */}
       {isOpen && (
-        <div className="mb-4 w-[calc(100vw-2rem)] sm:w-[400px] h-[500px] max-h-[60vh] sm:max-h-[70vh] bg-background border rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5">
+        <div className="mb-4 w-[calc(100vw-2rem)] sm:w-[400px] h-[500px] max-h-[60vh] sm:max-h-[70vh] bg-background border-2 border-primary rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5">
           {/* Header */}
           <div className="p-4 bg-primary text-primary-foreground flex justify-between items-center">
             <div className="flex items-center gap-2">
@@ -139,20 +161,16 @@ export function LiveAgent() {
 
       {/* Floating Button */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => {
+          setIsOpen(!isOpen);
+          if (!isOpen) setShowBubble(false);
+        }}
         className={cn(
-          "h-14 w-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 relative",
+          "h-14 w-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 relative font-bold text-lg",
           isOpen ? "bg-muted text-foreground" : "bg-primary text-primary-foreground"
         )}
       >
         {isOpen ? <X className="h-6 w-6" /> : <MessageSquare className="h-6 w-6" />}
-        
-        {/* Badge de notificação */}
-        {!isOpen && (
-          <div className="absolute -top-1 -right-1 h-5 w-5 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold animate-pulse">
-            ●
-          </div>
-        )}
       </button>
     </div>
   );
