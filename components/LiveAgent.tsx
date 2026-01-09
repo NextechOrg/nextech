@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageSquare, X, Send, Bot, User, Loader2, HelpCircle } from 'lucide-react';
+import { MessageSquare, X, Send, Bot, User, Loader2, HelpCircle, Mail } from 'lucide-react';
 import { Button } from './Button';
 import { cn } from '@/lib/utils';
 import ReactMarkdown from 'react-markdown';
@@ -15,6 +15,14 @@ export function LiveAgent() {
   const [isOpen, setIsOpen] = useState(false);
   const [showBubble, setShowBubble] = useState(true);
   const [input, setInput] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [name, setName] = useState('');
+  const [showContactForm, setShowContactForm] = useState(false);
+  const [sessionId] = useState(() => {
+    // Gerar ID único da sessão
+    return `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+  });
   const [messages, setMessages] = useState<Message[]>([
     { 
       role: 'assistant', 
@@ -43,15 +51,65 @@ export function LiveAgent() {
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: [...messages, userMessage] }),
+        body: JSON.stringify({ 
+          messages: [...messages, userMessage],
+          sessionId,
+          email: email || undefined,
+        }),
       });
 
       const data = await response.json();
       if (data.error) throw new Error(data.error);
 
       setMessages(prev => [...prev, { role: 'assistant', content: data.content }]);
+      
+      // Se a resposta tem link WhatsApp, mostrar formulário de contato (nome, email, telefone)
+      if (data.content?.includes('wa.me') && !email && !showContactForm) {
+        setShowContactForm(true);
+      }
     } catch (error) {
       setMessages(prev => [...prev, { role: 'assistant', content: 'Desculpe, tive um problema técnico. Pode me chamar no WhatsApp? +55 21 93300-9048' }]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleContactSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim() || !phone.trim()) return;
+
+    // Validação básica de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('Por favor, insira um email válido');
+      return;
+    }
+
+    // Validação básica de telefone (BR)
+    const phoneDigits = phone.replace(/\D/g, '');
+    if (phoneDigits.length < 10 || phoneDigits.length > 11) {
+      alert('Por favor, insira um telefone válido (com DDD)');
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      // Salvar email no servidor (será capturado na próxima requisição de chat)
+      await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          messages: [...messages, { role: 'user', content: `Meu email é: ${email}. Meu telefone é: ${phone}. Meu nome é: ${name || 'Cliente'}.` }],
+          sessionId,
+          email,
+          phone,
+          name,
+        }),
+      });
+      
+      setShowContactForm(false);
+    } catch (error) {
+      console.error('Erro ao salvar contato:', error);
     } finally {
       setIsLoading(false);
     }
@@ -144,18 +202,62 @@ export function LiveAgent() {
             )}
           </div>
 
+          {/* Contact Form */}
+          {showContactForm && (
+            <div className="p-4 border-t bg-background space-y-3">
+              <p className="text-xs text-muted-foreground font-medium">Para avançarmos, preencha seus dados de contato</p>
+              <form onSubmit={handleContactSubmit} className="space-y-2">
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Seu nome"
+                    className="flex-1 bg-muted border-none rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-primary outline-none"
+                  />
+                  <input
+                    type="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="(DDD) 99999-9999"
+                    className="w-[160px] bg-muted border-none rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-primary outline-none"
+                    required
+                  />
+                </div>
+                <div className="flex gap-2">
+                  <div className="relative flex-1">
+                    <Mail className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="seu@email.com"
+                      className="w-full bg-muted border-none rounded-lg pl-9 pr-3 py-2 text-sm focus:ring-1 focus:ring-primary outline-none"
+                      required
+                    />
+                  </div>
+                  <Button type="submit" size="icon" disabled={isLoading} className="shrink-0">
+                    <Send className="h-4 w-4" />
+                  </Button>
+                </div>
+              </form>
+            </div>
+          )}
+
           {/* Input */}
-          <form onSubmit={handleSubmit} className="p-4 border-t bg-background flex gap-2">
-            <input
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Digite sua dúvida..."
-              className="flex-1 bg-muted border-none rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-primary outline-none"
-            />
-            <Button type="submit" size="icon" disabled={isLoading} className="shrink-0">
-              <Send className="h-4 w-4" />
-            </Button>
-          </form>
+          {!showContactForm && (
+            <form onSubmit={handleSubmit} className="p-4 border-t bg-background flex gap-2">
+              <input
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Digite sua dúvida..."
+                className="flex-1 bg-muted border-none rounded-lg px-3 py-2 text-sm focus:ring-1 focus:ring-primary outline-none"
+              />
+              <Button type="submit" size="icon" disabled={isLoading} className="shrink-0">
+                <Send className="h-4 w-4" />
+              </Button>
+            </form>
+          )}
         </div>
       )}
 
