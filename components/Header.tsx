@@ -16,7 +16,6 @@ const navigation = [
   { name: 'Sistemas', href: '/sistemas-web' },
   { name: 'Sobre', href: '/sobre' },
   { name: 'Contato', href: '/contato' },
-  { name: 'Fundador', href: '/fundador' },
 ];
 
 export function Header() {

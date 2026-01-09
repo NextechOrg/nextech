@@ -10,7 +10,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="inline-block mb-4">
               <span className="text-xl font-bold tracking-tight text-foreground">
-                <span className="text-primary">Nextech</span>IA
+                <span className="text-primary">Nextech</span>
               </span>
             </Link>
             <p className="text-muted-foreground max-w-xs">
@@ -31,7 +31,6 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Empresa</h3>
             <ul className="space-y-2">
               <li><Link href="/sobre" className="text-sm text-muted-foreground hover:text-primary transition-colors">Sobre Nós</Link></li>
-              <li><Link href="/fundador" className="text-sm text-muted-foreground hover:text-primary transition-colors">Fundador</Link></li>
               <li><Link href="/contato" className="text-sm text-muted-foreground hover:text-primary transition-colors">Contato</Link></li>
             </ul>
           </div>
