@@ -29,3 +29,12 @@ export interface Interaction {
   metadata?: Record<string, any>
   created_at: string
 }
+
+export interface TeamMember {
+  id: string
+  name: string
+  headline: string
+  skills: string[]
+  linkedinUrl: string
+  photo: string
+}
