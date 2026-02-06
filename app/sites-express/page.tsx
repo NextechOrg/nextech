@@ -7,10 +7,10 @@ import { Zap, Layout, Bot, CheckCircle2, Globe } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "Sites Estáticos Express | BaXiJen",
+  title: "BaXiJen | Sites Express",
   description: "Crie sites estáticos rápidos e otimizados com nosso serviço Express. Perfeito para portfólios, blogs e apresentação de empresas.",
   openGraph: {
-    title: "Sites Estáticos Express | BaXiJen",
+    title: "BaXiJen | Sites Express",
     description: "Crie sites estáticos rápidos e otimizados com nosso serviço Express.",
     url: "https://baxijen.tech/sites-express",
     type: "website",

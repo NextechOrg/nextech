@@ -6,10 +6,10 @@ import { Button } from '@/components/Button';
 import { Mail, MessageCircle, MapPin } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Contato | BaXiJen",
+  title: "BaXiJen | Contato",
   description: "Entre em contato conosco. Estamos prontos para conversar sobre suas necessidades e apresentar nossas soluções.",
   openGraph: {
-    title: "Contato | BaXiJen",
+    title: "BaXiJen | Contato",
     description: "Entre em contato com a BaXiJen para conhecer nossas soluções.",
     url: "https://baxijen.tech/contato",
     type: "website",

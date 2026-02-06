@@ -7,10 +7,10 @@ import { Bot, MessageSquare, Brain, Sparkles, CheckCircle2 } from 'lucide-react'
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "Agentes de IA | BaXiJen",
+  title: "BaXiJen | Agentes de IA",
   description: "Automação inteligente com agentes de IA. Crie assistentes virtuais que aprendem e se adaptam às necessidades do seu negócio.",
   openGraph: {
-    title: "Agentes de IA | BaXiJen",
+    title: "BaXiJen | Agentes de IA",
     description: "Automação inteligente com agentes de IA para seu negócio.",
     url: "https://baxijen.tech/agentes-ia",
     type: "website",

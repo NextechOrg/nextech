@@ -7,10 +7,10 @@ import { CheckCircle2, MessageSquare, Zap, Clock, Users } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "Chatbots WhatsApp | BaXiJen",
+  title: "BaXiJen | Chatbots WhatsApp",
   description: "Crie chatbots inteligentes para WhatsApp. Automação de atendimento, vendas e suporte em tempo real.",
   openGraph: {
-    title: "Chatbots WhatsApp | BaXiJen",
+    title: "BaXiJen | Chatbots WhatsApp",
     description: "Crie chatbots inteligentes para WhatsApp com automação completa.",
     url: "https://baxijen.tech/chatbots-whatsapp",
     type: "website",
