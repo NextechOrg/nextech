@@ -11,11 +11,11 @@ export function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="inline-block mb-4">
               <Image 
-                src="/baxijen_logo_no_chinese.svg" 
+                src="/baxijen_symbol.png" 
                 alt="BaXiJen" 
-                width={120} 
-                height={32}
-                className="h-8 w-auto"
+                width={40} 
+                height={40}
+                className="h-10 w-10 dark:invert"
               />
             </Link>
             <p className="text-muted-foreground max-w-xs">

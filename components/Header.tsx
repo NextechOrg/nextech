@@ -30,11 +30,11 @@ export function Header() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
               <Image 
-                src="/baxijen_logo_no_chinese.svg" 
+                src="/baxijen_symbol.png" 
                 alt="BaXiJen" 
-                width={120} 
-                height={32}
-                className="h-8 w-auto"
+                width={40} 
+                height={40}
+                className="h-10 w-10"
               />
             </Link>
           </div>
