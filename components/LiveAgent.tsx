@@ -22,7 +22,7 @@ export function LiveAgent() {
   const [messages, setMessages] = useState<Message[]>([
     { 
       role: 'assistant', 
-      content: 'Olá! 👋 Seja bem-vindo à **Nextech**. \n\nSou seu assistente virtual e estou aqui para te ajudar a tirar sua ideia do papel. \n\nQual o objetivo do seu projeto hoje?' 
+      content: 'Olá! 👋 Seja bem-vindo à **BaXiJen**. \n\nSou seu assistente virtual e estou aqui para te ajudar a tirar sua ideia do papel. \n\nQual o objetivo do seu projeto hoje?' 
     }
   ]);
   const [isLoading, setIsLoading] = useState(false);

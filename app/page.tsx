@@ -78,11 +78,11 @@ export default function Home() {
         <Container className="relative z-20">
           <div className="flex flex-col items-center text-center space-y-8">
             <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm font-medium bg-background/50 backdrop-blur-md border-primary/20">
-              <span className="text-primary mr-2 font-bold animate-pulse">Novo:</span> Automações inteligentes com IA
+              <span className="text-primary mr-2 font-bold">巴西人</span> Tecnologia inteligente feita no Brasil
             </div>
             <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight text-foreground max-w-5xl font-sans leading-[1.1]">
               <TypeWriter 
-                text="Desenvolvemos a tecnologia que seu negócio precisa"
+                text="Inovação e tecnologia para transformar seu negócio"
                 className="text-foreground"
                 speed={50}
               />
@@ -184,7 +184,7 @@ export default function Home() {
       <section className="py-20 bg-muted/50">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl mb-4 font-sans">Por que escolher a Nextech?</h2>
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl mb-4 font-sans">Por que escolher a BaXiJen?</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
              {[
@@ -252,7 +252,7 @@ export default function Home() {
             <div className="relative z-10 space-y-6">
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Sua empresa está pronta para o próximo nível?</h2>
               <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto">
-                Desenvolvemos a tecnologia que resolve seus problemas reais. Vamos conversar sobre o seu projeto?
+                Combinamos inovação e conectividade para resolver seus desafios. Vamos conversar sobre o seu projeto?
               </p>
               <Link href="https://wa.me/5521933009048" target="_blank" className="inline-block">
                 <Button variant="outline" size="lg" className="bg-white text-primary border-white hover:bg-zinc-100">

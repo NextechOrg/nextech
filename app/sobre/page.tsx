@@ -7,12 +7,12 @@ import { teamMembers } from '@/lib/teamMembers';
 import { Target, Eye, ShieldCheck, CheckCircle2, Award, BookOpen, Cpu, Globe, Scale, Linkedin } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Sobre Nextech | História, Missão e Equipe",
-  description: "Conheça a história da Nextech, nossa missão nossa equipe",
+  title: "Sobre BaXiJen | História, Missão e Equipe",
+  description: "Conheça a história da BaXiJen, nossa missão nossa equipe",
   openGraph: {
-    title: "Sobre Nextech | História, Missão e Equipe",
-    description: "Conheça a história da Nextech e nossa equipe.",
-    url: "https://nextech.net.br/sobre",
+    title: "Sobre BaXiJen | História, Missão e Equipe",
+    description: "Conheça a história da BaXiJen e nossa equipe.",
+    url: "https://baxijen.tech/sobre",
     type: "website",
   },
 };
@@ -20,12 +20,12 @@ export const metadata: Metadata = {
 export default function SobrePage() {
   return (
     <div className="space-y-24">
-      {/* SEÇÃO 1: A NEXTECH */}
+      {/* SEÇÃO 1: A BAXIJEN */}
       <section className="py-20">
         <Container>
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <h1 className="text-4xl font-bold tracking-tight mb-4 text-foreground">A Nextech</h1>
+              <h1 className="text-4xl font-bold tracking-tight mb-4 text-foreground">A BaXiJen</h1>
               <p className="text-xl text-muted-foreground">
                 Tecnologia de ponta com foco em resolver problemas do mundo real.
               </p>
@@ -34,7 +34,7 @@ export default function SobrePage() {
             <div className="relative h-[400px] w-full mb-16 rounded-2xl overflow-hidden border shadow-xl bg-muted">
               <Image
                 src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
-                alt="Colaboração e tecnologia na Nextech"
+                alt="Colaboração e tecnologia na BaXiJen"
                 fill
                 priority
                 className="object-cover"
@@ -43,10 +43,10 @@ export default function SobrePage() {
 
             <div className="prose dark:prose-invert max-w-none text-muted-foreground space-y-6 text-lg">
               <p>
-                Nascemos da necessidade de empresas que buscam mais do que apenas um site bonito. Na Nextech, acreditamos que a tecnologia deve ser uma alavanca de crescimento e eficiência, não uma fonte de frustração.
+                Nascemos da necessidade de empresas que buscam mais do que apenas um site bonito. Na BaXiJen, acreditamos que a tecnologia deve ser uma alavanca de crescimento e eficiência, não uma fonte de frustração.
               </p>
               <p>
-                A Nextech foi fundada a partir de uma inquietação compartilhada por três jovens pesquisadores do COPPEAD apaixonados por tecnologia e inovação. Durante o doutorado em Inteligência Artificial e Administração, percebemos que a lacuna entre a pesquisa avançada e as necessidades reais do mercado era significativa. Essa inquietação nos motivou a transformar conhecimento acadêmico em soluções concretas, práticas e impactantes.
+                A BaXiJen foi fundada a partir de uma inquietação compartilhada por três jovens pesquisadores do COPPEAD apaixonados por tecnologia e inovação. Durante o doutorado em Inteligência Artificial e Administração, percebemos que a lacuna entre a pesquisa avançada e as necessidades reais do mercado era significativa. Essa inquietação nos motivou a transformar conhecimento acadêmico em soluções concretas, práticas e impactantes.
               </p>
               <p>
                 Unimos a velocidade e interatividade das interfaces modernas com a robustez e segurança de sistemas empresariais. Nossa abordagem é sempre técnica, pragmática e focada em resultados.

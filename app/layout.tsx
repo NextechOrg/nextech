@@ -18,13 +18,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const baseURL = "https://nextech.net.br";
+const baseURL = "https://baxijen.tech";
 
 export const metadata: Metadata = {
-  title: "Nextech | Desenvolvimento de Sites, Sistemas e Automações",
-  description: "Desenvolvimento de sites profissionais, sistemas web e automações inteligentes com IA. Soluções robustas para o mundo real.",
-  keywords: ["Desenvolvimento Web", "IA", "Automação", "Chatbots WhatsApp", "Sistemas Web"],
-  authors: [{ name: "Nextech" }],
+  title: "BaXiJen | Tecnologia Brasileira com Visão Global",
+  description: "BaXiJen (巴西人) desenvolve soluções tecnológicas inteligentes: sites, agentes de IA, chatbots e sistemas sob medida. Tecnologia brasileira com padrão global.",
+  keywords: ["BaXiJen", "tecnologia", "IA", "inteligência artificial", "desenvolvimento web", "chatbot", "automação", "Brasil"],
+  authors: [{ name: "BaXiJen" }],
   metadataBase: new URL(baseURL),
   alternates: {
     canonical: baseURL,
@@ -33,26 +33,26 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: baseURL,
-    siteName: "Nextech",
-    title: "Nextech | Desenvolvimento de Sites, Sistemas e Automações",
-    description: "Desenvolvimento de sites profissionais, sistemas web e automações inteligentes com IA. Soluções robustas para o mundo real.",
+    siteName: "BaXiJen",
+    title: "BaXiJen | Tecnologia Brasileira com Visão Global",
+    description: "Tecnologia inteligente feita no Brasil, com identidade própria e visão global.",
     images: [
       {
         url: `${baseURL}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: "Nextech - Desenvolvimento Web e IA",
+        alt: "BaXiJen - Tecnologia Brasileira",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nextech | Desenvolvimento de Sites, Sistemas e Automações",
-    description: "Desenvolvimento de sites profissionais, sistemas web e automações inteligentes com IA.",
+    title: "BaXiJen | Tecnologia Brasileira com Visão Global",
+    description: "Combinamos inovação e conectividade com um toque de calor humano.",
     images: [`${baseURL}/og-image.jpg`],
   },
   icons: {
-    icon: "/favicon.svg",
+    icon: "/baxijen_icon_dark.svg",
   },
 };
 

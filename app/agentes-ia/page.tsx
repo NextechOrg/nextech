@@ -7,12 +7,12 @@ import { Bot, MessageSquare, Brain, Sparkles, CheckCircle2 } from 'lucide-react'
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "Agentes de IA | Nextech",
+  title: "Agentes de IA | BaXiJen",
   description: "Automação inteligente com agentes de IA. Crie assistentes virtuais que aprendem e se adaptam às necessidades do seu negócio.",
   openGraph: {
-    title: "Agentes de IA | Nextech",
+    title: "Agentes de IA | BaXiJen",
     description: "Automação inteligente com agentes de IA para seu negócio.",
-    url: "https://nextech.net.br/agentes-ia",
+    url: "https://baxijen.tech/agentes-ia",
     type: "website",
   },
 };
@@ -33,7 +33,7 @@ export default function AgentesIAPage() {
             <div className="absolute inset-x-0 top-0 p-6 bg-gradient-to-b from-black/50 to-transparent">
               <div className="flex items-center gap-3 text-white">
                 <Brain className="h-6 w-6 animate-pulse" />
-                <span className="font-semibold tracking-wide">Nextech-AI Gen</span>
+                <span className="font-semibold tracking-wide">BaXiJen-AI Gen</span>
               </div>
             </div>
           </div>

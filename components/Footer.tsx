@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Container } from './Container';
 
 export function Footer() {
@@ -9,12 +10,16 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <Link href="/" className="inline-block mb-4">
-              <span className="text-xl font-bold tracking-tight text-foreground">
-                <span className="text-primary">Nextech</span>
-              </span>
+              <Image 
+                src="/baxijen_logo_no_chinese.svg" 
+                alt="BaXiJen" 
+                width={120} 
+                height={32}
+                className="h-8 w-auto"
+              />
             </Link>
             <p className="text-muted-foreground max-w-xs">
-              Desenvolvemos a tecnologia que seu negócio precisa.
+              Tecnologia brasileira com visão global. Combinamos inovação e conectividade para resolver seus desafios.
             </p>
           </div>
           <div>
@@ -36,7 +41,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Nextech. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} BaXiJen. Todos os direitos reservados.</p>
         </div>
       </Container>
     </footer>

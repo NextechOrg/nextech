@@ -8,12 +8,12 @@ import { Globe, MessageSquare, Layout, Smartphone, Search, Database, Zap, Bot } 
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "Serviços de Tecnologia | Nextech",
+  title: "Serviços de Tecnologia | BaXiJen",
   description: "Conheça nossos serviços de desenvolvimento web, sistemas inteligentes e automações com IA. Soluções personalizadas para sua empresa.",
   openGraph: {
-    title: "Serviços de Tecnologia | Nextech",
+    title: "Serviços de Tecnologia | BaXiJen",
     description: "Conheça nossos serviços de desenvolvimento web, sistemas inteligentes e automações com IA.",
-    url: "https://nextech.net.br/servicos",
+    url: "https://baxijen.tech/servicos",
     type: "website",
   },
 };
