@@ -51,9 +51,6 @@ export const metadata: Metadata = {
     description: "Combinamos inovação e conectividade com um toque de calor humano.",
     images: [`${baseURL}/og-image.jpg`],
   },
-  icons: {
-    icon: [
-      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
     ],
     apple: "/apple-touch-icon.png",
