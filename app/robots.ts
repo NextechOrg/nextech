@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://nextech.net.br/sitemap.xml",
+    sitemap: "https://baxijen.net.br/sitemap.xml",
   };
 }
