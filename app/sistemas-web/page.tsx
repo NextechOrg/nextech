@@ -7,12 +7,12 @@ import { Database, Shield, Server, Layout, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "Sistemas Web | Nextech",
+  title: "BaXiJen | Sistemas Web",
   description: "Desenvolvimento de sistemas web personalizados e robustos. Soluções escaláveis para todos os tipos de negócios.",
   openGraph: {
-    title: "Sistemas Web | Nextech",
+    title: "BaXiJen | Sistemas Web",
     description: "Desenvolvimento de sistemas web personalizados e robustos para seu negócio.",
-    url: "https://nextech.net.br/sistemas-web",
+    url: "https://baxijen.tech/sistemas-web",
     type: "website",
   },
 };

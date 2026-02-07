@@ -7,12 +7,12 @@ import { CheckCircle2, MessageSquare, Zap, Clock, Users } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "Chatbots WhatsApp | Nextech",
+  title: "BaXiJen | Chatbots WhatsApp",
   description: "Crie chatbots inteligentes para WhatsApp. Automação de atendimento, vendas e suporte em tempo real.",
   openGraph: {
-    title: "Chatbots WhatsApp | Nextech",
+    title: "BaXiJen | Chatbots WhatsApp",
     description: "Crie chatbots inteligentes para WhatsApp com automação completa.",
-    url: "https://nextech.net.br/chatbots-whatsapp",
+    url: "https://baxijen.tech/chatbots-whatsapp",
     type: "website",
   },
 };
@@ -58,7 +58,7 @@ export default function ChatbotsPage() {
                <div className="space-y-3 max-w-[90%]">
                  <div className="bg-background border rounded-lg p-2 text-[10px] text-muted-foreground">Olá, como posso ajudar?</div>
                  <div className="bg-primary text-primary-foreground rounded-lg p-3 text-sm shadow-lg border border-primary/20">
-                   Olá! Sou o assistente da Nextech. Gostaria de um orçamento?
+                   Olá! Sou o assistente da BaXiJen. Gostaria de um orçamento?
                  </div>
                </div>
             </div>

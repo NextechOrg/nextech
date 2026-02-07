@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { Container } from './Container';
 import { Button } from './Button';
@@ -9,13 +10,13 @@ import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
 
 const navigation = [
-  { name: 'Início', href: '/' },
-  { name: 'Serviços', href: '/servicos' },
-  { name: 'Sites Express', href: '/sites-express' },
-  { name: 'Agentes IA', href: '/agentes-ia' },
-  { name: 'Sistemas', href: '/sistemas-web' },
-  { name: 'Sobre', href: '/sobre' },
-  { name: 'Contato', href: '/contato' },
+  { name: 'Início', href: '/'},
+  { name: 'Serviços', href: '/servicos'},
+  { name: 'Sites Express', href: '/sites-express'},
+  { name: 'Agentes IA', href: '/agentes-ia'},
+  { name: 'Sistemas', href: '/sistemas-web'},
+  { name: 'Sobre', href: '/sobre'},
+  { name: 'Contato', href: '/contato'},
 ];
 
 export function Header() {
@@ -28,9 +29,13 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <span className="text-xl font-bold tracking-tight text-foreground">
-                <span className="text-primary">Nextech</span>
-              </span>
+              <Image 
+                src="/baxijen_symbol.png" 
+                alt="BaXiJen" 
+                width={40} 
+                height={40}
+                className="h-10 w-10"
+              />
             </Link>
           </div>
 

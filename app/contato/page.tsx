@@ -6,12 +6,12 @@ import { Button } from '@/components/Button';
 import { Mail, MessageCircle, MapPin } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Contato | Nextech",
+  title: "BaXiJen | Contato",
   description: "Entre em contato conosco. Estamos prontos para conversar sobre suas necessidades e apresentar nossas soluções.",
   openGraph: {
-    title: "Contato | Nextech",
-    description: "Entre em contato com a Nextech para conhecer nossas soluções.",
-    url: "https://nextech.net.br/contato",
+    title: "BaXiJen | Contato",
+    description: "Entre em contato com a BaXiJen para conhecer nossas soluções.",
+    url: "https://baxijen.tech/contato",
     type: "website",
   },
 };
@@ -31,7 +31,7 @@ export default function ContatoPage() {
           <div className="relative h-[250px] lg:h-[300px] w-full rounded-2xl overflow-hidden shadow-xl border bg-muted">
             <Image 
               src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
-              alt="Atendimento e Suporte Nextech"
+              alt="Atendimento e Suporte BaXiJen"
               fill
               className="object-cover"
             />

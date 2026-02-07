@@ -22,7 +22,7 @@ export function LiveAgent() {
   const [messages, setMessages] = useState<Message[]>([
     { 
       role: 'assistant', 
-      content: 'Olá! 👋 Seja bem-vindo à **Nextech**. \n\nSou seu assistente virtual e estou aqui para te ajudar a tirar sua ideia do papel. \n\nQual o objetivo do seu projeto hoje?' 
+      content: 'Olá! 👋 Seja bem-vindo à **BaXiJen**. \n\nSou seu assistente virtual e estou aqui para te ajudar a tirar sua ideia do papel. \n\nQual o objetivo do seu projeto hoje?' 
     }
   ]);
   const [isLoading, setIsLoading] = useState(false);
@@ -102,7 +102,7 @@ export function LiveAgent() {
           <div className="p-4 bg-primary text-primary-foreground flex justify-between items-center">
             <div className="flex items-center gap-2">
               <Bot className="h-5 w-5" />
-              <span className="font-bold">Consultor nexIA</span>
+              <span className="font-bold">Assistente BaXiJen</span>
             </div>
             <button onClick={() => setIsOpen(false)} className="hover:opacity-80">
               <X className="h-5 w-5" />
@@ -182,7 +182,7 @@ export function LiveAgent() {
         }}
         className={cn(
           "h-14 w-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 relative font-bold text-lg",
-          isOpen ? "bg-muted text-foreground" : "bg-primary text-primary-foreground"
+          isOpen ? "bg-muted text-foreground" : "bg-primary text-primary-foreground hover:bg-[#2E7D32]"
         )}
       >
         {isOpen ? <X className="h-6 w-6" /> : <MessageSquare className="h-6 w-6" />}
